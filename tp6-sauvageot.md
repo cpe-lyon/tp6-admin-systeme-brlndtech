@@ -61,9 +61,10 @@ nano /etc/fstab
 ### 7. Utilisez la commande mount puis redémarrez votre VM pour valider la configuration
 
 ### 8. Montez votre clé USB dans la VM
-
+```
 mkdir /media/usb_1
 mount -t vfat /dev/sdb1 /media/USB -o 
+```
 
 ## Exercice 2 
 
@@ -86,7 +87,7 @@ d // delete
 ```
 
 ### 3. A l’aide de la commande pvcreate, créez un volume physique LVM. Validez qu’il est bien créé, en utilisant la commande pvdisplay
-
+```
 pvcreate /dev/sdb
 pvdisplay 
 
@@ -100,7 +101,7 @@ pvdisplay
   Free PE               0
   Allocated PE          0
   PV UUID               aG24dF-mwFN-ZgjR-nAJF-RTeK-JklI-iKgdhR
-
+```
 ### 4. A l’aide de la commande vgcreate, créez un groupe de volumes, qui pour l’instant ne contiendra que le volume physique créé à l’étape précédente. Vérifiez à l’aide de la commande vgdisplay.
 ```
 vgcreate vg_name_01 /dev/sdb
